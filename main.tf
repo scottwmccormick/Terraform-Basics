@@ -32,7 +32,7 @@ resource "azurerm_virtual_network" "myvnet" {
 #create a subnet within the vnet
 resource "azurerm_subnet" "mysubnet" {
     name = "cairnconsult-subnet"
-    resource_group_name = azurerm_resource_group.myrg
+    resource_group_name = azurerm_resource_group.myrg.name
     virtual_network_name = azurerm_virtual_network.myvnet.name
     address_prefixes = [ "10.0.1.0/24" ]
   
